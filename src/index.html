@@ -1,17 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oussama Seddati - IT Support Technician</title>
+    <meta name="description" content="Professional IT Support Technician specializing in cloud computing, network setup, and technical support services.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Oussama Seddati</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="https://pixabay.com/get/g2d90620f31ea62e404c9750f25c1c72692c94964e8d66367a98eb1422867b6e10255ed19c1f9b4c304d6bdac9cfb2b0e9b4ef1e7965105f5e307c25c978328c4_1280.jpg" alt="Modern Office Workspace" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm Oussama Seddati</h1>
+                <p class="hero-subtitle">IT Support Technician | Cloud Computing Enthusiast</p>
+                <p class="hero-description">Passionate about learning cloud technologies and providing excellent IT support. Currently building my expertise in AWS and Azure while helping users solve technical challenges.</p>
+                <a href="#projects" class="cta-button">See My Learning Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know the person behind the technical expertise</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="oussama-profile.jpg" alt="Oussama Seddati - IT Support Technician" class="profile-photo">
+                </div>
+                <div class="about-text">
+                    <p>I'm an IT Support Technician currently working at Aptiv M2 in Tangier since September 2024, with a strong passion for cloud computing technologies. I specialize in user support, incident management, and basic Windows & Linux administration with cloud deployment experience in Azure, AWS, and OpenStack.</p>
+                    
+                    <p>My current role involves supporting office tools (Microsoft 365, network printers), assisting production lines with critical IT equipment troubleshooting, and collaborating with infrastructure and cybersecurity teams for escalations. I have hands-on experience with VMware, VirtualBox, ServiceNow, and Veyon supervision solutions.</p>
+                    
+                    <p>I hold a specialized diploma in Digital Infrastructure with Cloud Computing specialization from ISTAG BAB TIZIMI-Meknes, along with multiple CISCO certifications including PCAP Python, CCNA v7, and Cybersecurity Essentials. I'm fluent in Arabic (native), French (B1), and English (B1).</p>
+                    
+                    <div class="skills-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">OpenStack</span>
+                        <span class="skill-tag">VMware</span>
+                        <span class="skill-tag">Windows & Linux</span>
+                        <span class="skill-tag">Microsoft 365</span>
+                        <span class="skill-tag">ServiceNow</span>
+                        <span class="skill-tag">CISCO Certified</span>
+                    </div>
+                    
+                    <div class="resume-download">
+                        <a href="oussama-seddati-resume.pdf" download="Oussama_Seddati_Resume.pdf" class="download-btn">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">Comprehensive IT solutions tailored to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="service-title">IT Help Desk Support</h3>
+                    <p class="service-description">Professional IT support for Microsoft 365, network printers, and production equipment. Experience with ServiceNow ticketing and critical system troubleshooting.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="service-title">Network & Server Setup</h3>
+                    <p class="service-description">Network administration experience with TCP/IP, DNS, DHCP, and VPN configurations. Windows and Linux system administration with VMware virtualization.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Infrastructure</h3>
+                    <p class="service-description">Hands-on experience with Azure, AWS, and OpenStack cloud platforms. Specialized diploma in Digital Infrastructure with Cloud Computing focus.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Troubleshooting & Maintenance</h3>
+                    <p class="service-description">System diagnostics and maintenance for production environments. Experience with critical IT equipment troubleshooting and escalation procedures.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">Process Automation</h3>
+                    <p class="service-description">Process automation using Python programming and deployment tools. Experience with Veyon supervision solutions and Hadoop environment setup.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="service-title">Chatbot Solutions</h3>
+                    <p class="service-description">AI-powered customer support solutions and automated chat systems. Focus on improving customer service through intelligent automation technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">Real projects and hands-on experience in IT support and cloud technologies</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://pixabay.com/get/g95e0d114d462f65ab05b7e61a55afe400ab5a16b76883e10807c4c5e8e2d861cecea68bf5e6ad83b40dcc8c396d8e87295b76c62a5a7c0393ef8671a1e761bb3_1280.jpg" alt="AWS Learning Path">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Production IT Support at Aptiv M2</h3>
+                        <p class="project-description">Currently providing IT support for production environments, managing Microsoft 365 deployments, network printer configurations, and critical equipment troubleshooting. Working with ServiceNow ticketing system.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Microsoft 365</span>
+                            <span class="tech-tag">ServiceNow</span>
+                            <span class="tech-tag">Network Printers</span>
+                            <span class="tech-tag">Production Support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://pixabay.com/get/ge54bc7fce2297a979db6c327f09cfb02565cd6672a6144e7235d4c5aa4820fd3bf5b31616858d0026a56cc360fee2b7ce6c3a1d7ff2403e8602dbb03afd6a71c_1280.jpg" alt="IT Support Practice">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CISCO Networking Certifications</h3>
+                        <p class="project-description">Completed comprehensive CISCO training including CCNA v7 (Introduction to Networks, Switching & Routing), Cybersecurity Essentials, and Ethical Hacker certifications with hands-on lab experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">CCNA v7</span>
+                            <span class="tech-tag">Cybersecurity</span>
+                            <span class="tech-tag">Ethical Hacking</span>
+                            <span class="tech-tag">CyberOps</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://pixabay.com/get/g274526d986a856c785b41f97616583404a9b2b764cb26bdba1fb266c8dfe6da0a4ee5a0f54cd12d58ee403118726cdb8bbf6d6b0cfeba7f52f878937555a645a_1280.jpg" alt="Azure Learning Path">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cloud Computing & Supervision Systems</h3>
+                        <p class="project-description">Internship project deploying Veyon supervision solutions and setting up Hadoop environments. Specialized training in cloud platforms including Azure, AWS, and OpenStack with practical implementation experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Veyon</span>
+                            <span class="tech-tag">Hadoop</span>
+                            <span class="tech-tag">Azure</span>
+                            <span class="tech-tag">OpenStack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to discuss your next project? Let's connect!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>oussamaseddati8@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>Available upon request</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Available for remote work</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Oussama Seddati</h3>
+                    <p>IT Support Technician & Cloud Computing Specialist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/oussama-seddati" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/oussamaseddati" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oussama Seddati. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
 </html>
