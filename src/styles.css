@@ -243,13 +243,18 @@ img {
 }
 
 .profile-photo {
-    width: 200%;
-    max-width: 200px;
-    object-fit: cover;
-    height: auto;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+}
+@media (max-width: 600px) {
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 .profile-photo:hover {
