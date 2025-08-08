@@ -252,8 +252,8 @@ img {
 }
 @media (max-width: 600px) {
     .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
 }
 
