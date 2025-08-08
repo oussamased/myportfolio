@@ -388,3 +388,77 @@ const throttledScrollHandler = throttle(() => {
 }, 16); // ~60fps
 
 window.addEventListener('scroll', throttledScrollHandler);
+const chatWindow = document.getElementById('chat-window');
+const chatInput = document.getElementById('chat-input');
+const chatSubmit = document.getElementById('chat-submit');
+
+const questions = [
+  "What's your full name?",
+  "What's your email address?",
+  "What is the subject of your message?",
+  "Please type your message."
+];
+
+let answers = [];
+let currentQuestion = 0;
+
+// Function to add a chat message bubble
+function addMessage(text, sender = 'bot') {
+  const messageEl = document.createElement('div');
+  messageEl.classList.add('chat-message', sender);
+  messageEl.textContent = text;
+  chatWindow.appendChild(messageEl);
+  chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to bottom
+}
+
+// Ask the first question
+addMessage(questions[currentQuestion]);
+
+function processAnswer() {
+  const answer = chatInput.value.trim();
+  if (!answer) return; // ignore empty input
+  
+  addMessage(answer, 'user');
+  answers.push(answer);
+  chatInput.value = '';
+
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+    setTimeout(() => addMessage(questions[currentQuestion]), 500);
+  } else {
+    // All answers collected, send to backend
+    sendToBackend();
+  }
+}
+
+function sendToBackend() {
+  const data = {
+    name: answers[0],
+    email: answers[1],
+    subject: answers[2],
+    message: answers[3]
+  };
+
+  addMessage("Sending your message...", 'bot');
+
+  fetch("https://script.google.com/macros/s/AKfycbzqI-vrD7hV-HYaAUCFawWSC58VFmpd6Dvz6Fc61Qor2BY3D4fftbyXe7_QrIdv3twb/exec", {
+    method: "POST",
+    body: new URLSearchParams(data)
+  })
+  .then(response => response.text())
+  .then(result => {
+    addMessage("✅ Message sent! Thank you for contacting me.", 'bot');
+  })
+  .catch(err => {
+    addMessage("❌ Error sending message. Please try again later.", 'bot');
+  });
+}
+
+chatSubmit.addEventListener('click', processAnswer);
+
+chatInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    processAnswer();
+  }
+});
