@@ -338,27 +338,36 @@ document.addEventListener('DOMContentLoaded', () => {
 // Lazy loading for images
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img');
-    
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.style.opacity = '0';
+
+                // Apply transition only once
                 img.style.transition = 'opacity 0.3s ease';
-                
-                img.onload = () => {
+
+                // If image is already loaded (from cache)
+                if (img.complete) {
                     img.style.opacity = '1';
-                };
-                
-                observer.unobserve(img);
+                } else {
+                    img.onload = () => {
+                        img.style.opacity = '1';
+                    };
+                }
+
+                observer.unobserve(img); // Stop observing once handled
             }
         });
     });
-    
+
     images.forEach(img => {
+        // Set initial opacity to 0
+        img.style.opacity = '0';
         imageObserver.observe(img);
     });
 });
+
 
 // Performance optimization: Throttle scroll events
 function throttle(func, wait) {
