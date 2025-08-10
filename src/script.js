@@ -1,149 +1,152 @@
-// Wait for DOM
+// Responsive Navigation Toggle
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+navToggle.addEventListener('click', () => {
+  const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+  navToggle.setAttribute('aria-expanded', !expanded);
+  navMenu.classList.toggle('active');
+});
+
+// Smooth scroll & active link highlight
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').substring(1) === current) {
+      link.classList.add('active');
+    }
+  });
+
+  // Show/hide back to top button
+  const backToTop = document.getElementById('back-to-top');
+  if (window.pageYOffset > 300) {
+    backToTop.style.display = 'flex';
+  } else {
+    backToTop.style.display = 'none';
+  }
+});
+
+// Back to top button functionality
+document.getElementById('back-to-top').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Animated typing effect for hero
+const typingText = [
+  'IT Support Technician',
+  'Cloud Computing Specialist',
+  'Freelance IT Expert',
+  'Problem Solver & Automation Enthusiast',
+];
+
+let typingIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 120;
+const deletingSpeed = 50;
+const delayBetween = 2000;
+
+const typingElement = document.getElementById('typing');
+
+function type() {
+  const currentText = typingText[typingIndex];
+  if (isDeleting) {
+    charIndex--;
+    typingElement.textContent = currentText.substring(0, charIndex);
+    if (charIndex === 0) {
+      isDeleting = false;
+      typingIndex = (typingIndex + 1) % typingText.length;
+      setTimeout(type, 400);
+    } else {
+      setTimeout(type, deletingSpeed);
+    }
+  } else {
+    charIndex++;
+    typingElement.textContent = currentText.substring(0, charIndex);
+    if (charIndex === currentText.length) {
+      isDeleting = true;
+      setTimeout(type, delayBetween);
+    } else {
+      setTimeout(type, typingSpeed);
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Navbar toggle for mobile
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-    navToggle.setAttribute('aria-expanded', !expanded);
-    navMenu.classList.toggle('active');
-  });
+  type();
+});
 
-  // Smooth scroll + Active link highlight
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('.nav-link');
+// FORM VALIDATION & SIMULATED SUBMISSION
+const form = document.getElementById('quote-form');
+const nameInput = document.getElementById('client-name');
+const emailInput = document.getElementById('client-email');
+const projectTypeSelect = document.getElementById('project-type');
+const detailsInput = document.getElementById('project-details');
 
-  function changeActiveLink() {
-    let index = sections.length;
+const nameError = document.getElementById('name-error');
+const emailError = document.getElementById('email-error');
+const projectTypeError = document.getElementById('project-type-error');
+const detailsError = document.getElementById('details-error');
+const successMessage = document.getElementById('form-success');
 
-    while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+form.addEventListener('submit', e => {
+  e.preventDefault();
 
-    navLinks.forEach((link) => link.classList.remove('active'));
-    navLinks[index].classList.add('active');
+  let valid = true;
+  successMessage.textContent = '';
+  
+  // Name validation
+  if (nameInput.value.trim() === '') {
+    nameError.textContent = 'Please enter your full name.';
+    nameError.style.display = 'block';
+    valid = false;
+  } else {
+    nameError.style.display = 'none';
   }
-  changeActiveLink();
-  window.addEventListener('scroll', changeActiveLink);
-
-  // Back to top button
-  const backToTopBtn = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      backToTopBtn.classList.add('show');
-    } else {
-      backToTopBtn.classList.remove('show');
-    }
-  });
-
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Typing effect in hero
-  const typingElement = document.getElementById('typing');
-  const phrases = [
-    'IT Support Technician',
-    'Cloud Computing Specialist',
-    'Azure | AWS | OpenStack',
-    'Helping solve technical challenges',
-  ];
-  let phraseIndex = 0;
-  let letterIndex = 0;
-  let typingDelay = 100;
-  let erasingDelay = 50;
-  let newPhraseDelay = 2000;
-
-  function type() {
-    if (letterIndex < phrases[phraseIndex].length) {
-      typingElement.textContent += phrases[phraseIndex].charAt(letterIndex);
-      letterIndex++;
-      setTimeout(type, typingDelay);
-    } else {
-      setTimeout(erase, newPhraseDelay);
-    }
+  
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailInput.value.trim())) {
+    emailError.textContent = 'Please enter a valid email address.';
+    emailError.style.display = 'block';
+    valid = false;
+  } else {
+    emailError.style.display = 'none';
+  }
+  
+  // Project type validation
+  if (!projectTypeSelect.value) {
+    projectTypeError.textContent = 'Please select a project type.';
+    projectTypeError.style.display = 'block';
+    valid = false;
+  } else {
+    projectTypeError.style.display = 'none';
+  }
+  
+  // Project details validation
+  if (detailsInput.value.trim() === '') {
+    detailsError.textContent = 'Please provide project details.';
+    detailsError.style.display = 'block';
+    valid = false;
+  } else {
+    detailsError.style.display = 'none';
   }
 
-  function erase() {
-    if (letterIndex > 0) {
-      typingElement.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
-      letterIndex--;
-      setTimeout(erase, erasingDelay);
-    } else {
-      phraseIndex++;
-      if (phraseIndex >= phrases.length) phraseIndex = 0;
-      setTimeout(type, typingDelay + 200);
-    }
+  if (valid) {
+    // Simulate submission (you can integrate real backend or services later)
+    form.reset();
+    successMessage.textContent = 'Thank you! Your request has been sent successfully.';
   }
-
-  setTimeout(type, newPhraseDelay);
-
-  // Skills progress animation when section enters viewport
-  const skillProgressBars = document.querySelectorAll('.skill-progress');
-  const skillsSection = document.getElementById('skills');
-
-  function animateSkills() {
-    const sectionPos = skillsSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight;
-
-    if (sectionPos < screenPos - 100) {
-      skillProgressBars.forEach((bar) => {
-        bar.style.width = bar.style.getPropertyValue('--progress');
-      });
-      window.removeEventListener('scroll', animateSkills);
-    }
-  }
-  window.addEventListener('scroll', animateSkills);
-  animateSkills(); // in case already visible on load
-
-  // Contact form validation & submission simulation
-  const contactForm = document.getElementById('contact-form');
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
-
-  const nameError = document.getElementById('name-error');
-  const emailError = document.getElementById('email-error');
-  const messageError = document.getElementById('message-error');
-  const formSuccess = document.getElementById('form-success');
-
-  function validateEmail(email) {
-    // Simple regex email validation
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Reset errors and success message
-    nameError.textContent = '';
-    emailError.textContent = '';
-    messageError.textContent = '';
-    formSuccess.textContent = '';
-
-    let valid = true;
-
-    if (nameInput.value.trim().length < 2) {
-      nameError.textContent = 'Please enter your name.';
-      valid = false;
-    }
-
-    if (!validateEmail(emailInput.value.trim())) {
-      emailError.textContent = 'Please enter a valid email.';
-      valid = false;
-    }
-
-    if (messageInput.value.trim().length < 10) {
-      messageError.textContent = 'Please enter a message (at least 10 characters).';
-      valid = false;
-    }
-
-    if (valid) {
-      // Simulate form submission delay
-      formSuccess.textContent = 'Sending message...';
-
-      setTimeout(() => {
-        formSuccess.textContent = 'Thank you! Your message has been sent.';
-        contactForm.reset();
-      }, 1500);
-    }
-  });
 });
