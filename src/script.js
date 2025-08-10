@@ -338,36 +338,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // Lazy loading for images
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img');
-
+    
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-
-                // Apply transition only once
+                img.style.opacity = '0';
                 img.style.transition = 'opacity 0.3s ease';
-
-                // If image is already loaded (from cache)
-                if (img.complete) {
+                
+                img.onload = () => {
                     img.style.opacity = '1';
-                } else {
-                    img.onload = () => {
-                        img.style.opacity = '1';
-                    };
-                }
-
-                observer.unobserve(img); // Stop observing once handled
+                };
+                
+                observer.unobserve(img);
             }
         });
     });
-
+    
     images.forEach(img => {
-        // Set initial opacity to 0
-        img.style.opacity = '0';
         imageObserver.observe(img);
     });
 });
-
 
 // Performance optimization: Throttle scroll events
 function throttle(func, wait) {
@@ -388,4 +379,3 @@ const throttledScrollHandler = throttle(() => {
 }, 16); // ~60fps
 
 window.addEventListener('scroll', throttledScrollHandler);
-
