@@ -1,115 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Oussama Seddati - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oussama Seddati | IT Support & Cloud Specialist</title>
+  <meta name="description" content="Oussama Seddati - IT Support Technician & Cloud Computing Specialist" />
+  
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pzBwWltTJxJLrOf4l6cdHsI6T7WQ9MkCMoRlcK7RTF0XvChnY9aK8cM0VoP4CDP7z7q6A9A98YehLgGPlG7Xmw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Oussama Seddati</div>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </nav>
-    </header>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" tabindex="0">Oussama Seddati</div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </nav>
 
-    <section id="home" class="section home-section">
-        <div class="container">
-            <h1>Hello, I'm <span>Oussama Seddati</span></h1>
-            <p>IT Support Technician & Cloud Computing Enthusiast</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="hero section">
+    <div class="container hero-container">
+      <h1 class="hero-title">
+        Hi, I'm <span class="highlight">Oussama Seddati</span>
+      </h1>
+      <h2 class="hero-subtitle">
+        <span id="typing"></span>
+      </h2>
+      <p class="hero-description">
+        Passionate IT Support Technician and Cloud Computing Specialist building expertise in Azure, AWS, and OpenStack. Helping users solve technical challenges with creativity and dedication.
+      </p>
+      <a href="#projects" class="btn cta-btn">Explore My Work</a>
+    </div>
+  </section>
 
-    <section id="about" class="section about-section">
-        <div class="container about-container">
-            <div class="about-image">
-                <img src="me.png" alt="Oussama Seddati" />
-            </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I'm an IT Support Technician passionate about cloud computing, network administration, and problem-solving. Skilled in Microsoft 365, Azure, AWS, Linux & Windows systems, and infrastructure support.</p>
-                <p>I currently work at Aptiv M2 supporting 500+ users and production environments. I hold several certifications including CCNA and Cybersecurity Essentials.</p>
-                <a href="Oussama_Seddati_Resume.pdf" download class="btn-outline">Download Resume</a>
-            </div>
+  <!-- About Me Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <p>Get to know the person behind the expertise.</p>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="me.png" alt="Oussama Seddati" />
         </div>
-    </section>
+        <div class="about-text">
+          <p>
+            I'm an IT Support Technician at Aptiv M2 Tangier, specializing in cloud computing, user support, and infrastructure management. Experienced with Microsoft 365, ServiceNow, VMware, and network troubleshooting.
+          </p>
+          <p>
+            I hold a diploma in Digital Infrastructure & Cloud Computing and certifications including CCNA, PCAP Python, and Cybersecurity Essentials. Fluent in Arabic, French, and English.
+          </p>
+          <div class="skills-tags">
+            <span>Azure</span><span>AWS</span><span>OpenStack</span><span>VMware</span><span>Windows & Linux</span><span>ServiceNow</span><span>Python</span><span>Microsoft 365</span>
+          </div>
+          <a href="Oussama_Seddati_Resume.pdf" download class="btn download-btn">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">Azure</div>
-                <div class="skill-card">AWS</div>
-                <div class="skill-card">OpenStack</div>
-                <div class="skill-card">VMware</div>
-                <div class="skill-card">Windows & Linux</div>
-                <div class="skill-card">Microsoft 365</div>
-                <div class="skill-card">ServiceNow</div>
-                <div class="skill-card">CISCO Certified</div>
-                <div class="skill-card">Python Automation</div>
-                <div class="skill-card">Networking</div>
-            </div>
+  <!-- Skills Section -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-header">
+        <h2>Skills</h2>
+        <p>Technologies and tools I master</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill">
+          <div class="skill-info">
+            <h3>Azure</h3>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="--progress: 85%;"></div>
+          </div>
         </div>
-    </section>
+        <div class="skill">
+          <div class="skill-info">
+            <h3>AWS</h3>
+            <span>80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="--progress: 80%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-info">
+            <h3>OpenStack</h3>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="--progress: 75%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-info">
+            <h3>VMware</h3>
+            <span>80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="--progress: 80%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-info">
+            <h3>Python</h3>
+            <span>70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="--progress: 70%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-info">
+            <h3>ServiceNow</h3>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="--progress: 75%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2>Projects & Experience</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="aptiv.png" alt="Aptiv IT Support" />
-                    <h3>IT Support Technician - Aptiv M2</h3>
-                    <p>Supporting 500+ users with Microsoft 365, network printers, and critical production IT equipment. Hands-on with VMware and ServiceNow ticketing.</p>
-                </div>
-                <div class="project-card">
-                    <img src="cisco.png" alt="Cisco Certifications" />
-                    <h3>CISCO Certifications</h3>
-                    <p>Completed CCNA v7, Cybersecurity Essentials, Ethical Hacking training with lab exercises.</p>
-                </div>
-                <div class="project-card">
-                    <img src="cloud.png" alt="Cloud Computing Internship" />
-                    <h3>Cloud & Supervision Systems Internship</h3>
-                    <p>Deployed Veyon supervision solutions and set up Hadoop environments with practical experience on Azure, AWS, and OpenStack.</p>
-                </div>
+  <!-- Projects Section -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Projects & Experience</h2>
+        <p>Hands-on experience and real projects</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <img src="aptiv.png" alt="Aptiv IT Support" />
+          <div class="project-content">
+            <h3>IT Support Technician at Aptiv M2</h3>
+            <p>
+              Supporting 500+ users and production environments with Microsoft 365, network printers, and ServiceNow ticketing system.
+            </p>
+            <div class="project-tags">
+              <span>Microsoft 365</span>
+              <span>ServiceNow</span>
+              <span>Network Printers</span>
+              <span>Production Support</span>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-        <div class="container contact-container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out for collaborations or opportunities!</p>
-            <form id="contact-form" class="contact-form" autocomplete="off">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="email" name="email" placeholder="Your Email" required />
-                <input type="text" name="subject" placeholder="Subject" required />
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-container">
-            <p>&copy; 2025 Oussama Seddati. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/oussama-seddati" target="_blank" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn" /></a>
-                <a href="https://github.com/oussamaseddati" target="_blank" aria-label="GitHub"><img src="github.svg" alt="GitHub" /></a>
+          </div>
+        </article>
+        <!-- Project 2 -->
+        <article class="project-card">
+          <img src="Cisco.png" alt="CISCO Certifications" />
+          <div class="project-content">
+            <h3>CISCO Networking Certifications</h3>
+            <p>
+              Completed CCNA v7, Cybersecurity Essentials, Ethical Hacking, and CyberOps with hands-on labs.
+            </p>
+            <div class="project-tags">
+              <span>CCNA v7</span>
+              <span>Cybersecurity</span>
+              <span>Ethical Hacking</span>
+              <span>CyberOps</span>
             </div>
+          </div>
+        </article>
+        <!-- Project 3 -->
+        <article class="project-card">
+          <img src="cloud.png" alt="Cloud Computing Internship" />
+          <div class="project-content">
+            <h3>Cloud Computing & Supervision Systems</h3>
+            <p>
+              Internship deploying Veyon supervision solutions, Hadoop setup, and cloud platform training (Azure, AWS, OpenStack).
+            </p>
+            <div class="project-tags">
+              <span>Veyon</span>
+              <span>Hadoop</span>
+              <span>Azure</span>
+              <span>OpenStack</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section certifications">
+    <div class="container">
+      <div class="section-header">
+        <h2>Certifications</h2>
+        <p>Professional credentials and training</p>
+      </div>
+      <ul class="certifications-list">
+        <li>CCNA v7 - Cisco</li>
+        <li>PCAP Python Certification</li>
+        <li>Cybersecurity Essentials</li>
+        <li>Ethical Hacking</li>
+        <li>Azure Fundamentals</li>
+        <li>AWS Certified Cloud Practitioner</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact Me</h2>
+        <p>Ready to connect? Send me a message!</p>
+      </div>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name" />
+          <small class="error-message" id="name-error"></small>
         </div>
-    </footer>
+        <div class="form-group">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required aria-required="true" placeholder="your.email@example.com" />
+          <small class="error-message" id="email-error"></small>
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Write your message here..."></textarea>
+          <small class="error-message" id="message-error"></small>
+        </div>
+        <button type="submit" class="btn submit-btn">Send Message</button>
+        <p class="form-success" id="form-success" role="alert" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <h3>Oussama Seddati</h3>
+        <p>IT Support Technician & Cloud Computing Specialist</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com/in/oussama-seddati" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/oussamaseddati" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Oussama Seddati. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
