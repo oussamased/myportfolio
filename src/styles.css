@@ -718,3 +718,22 @@ h1, h2, h3, h4, h5, h6 {
 .mb-3 {
     margin-bottom: 3rem;
 }
+/* ================================================================================*/
+.contact-button {
+  margin-top: 20px;
+}
+
+.contact-button .btn {
+  display: inline-block;
+  background-color: #1e3a8a; /* Your theme color */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.contact-button .btn:hover {
+  background-color: #0f2456;
+}
