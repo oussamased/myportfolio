@@ -442,10 +442,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-form-container iframe {
   width: 100%;
-  height: 600px;
+  height: 1100px; /* Increase until scrollbar disappears */
   border: none;
   border-radius: 8px;
 }
+
 /* old */
 .contact {
     padding: 5rem 0;
