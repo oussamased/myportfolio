@@ -242,51 +242,26 @@
     <div class="container">
       <h2 class="section-title">Request a Quote</h2>
       <p>Have a project? Tell me about it and I'll get back to you with a personalized proposal.</p>
-      <form id="quote-form" novalidate>
-        <div class="form-group">
-          <label for="client-name">Full Name *</label>
-          <input type="text" id="client-name" name="client-name" placeholder="Your full name" required />
-          <small class="error-message" id="name-error"></small>
-        </div>
+     <form id="quote-form" action="https://docs.google.com/forms/d/e/9N4MfETk76ncko817/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+  <input type="text" name="entry.326657552" placeholder="Full Name" required />
+  <input type="email" name="entry.106575874" placeholder="Email Address" required />
+  
+  <select name="entry.1710272068" required>
+    <option value="" disabled selected>Select Project Type</option>
+    <option value="Website">Website</option>
+    <option value="Cloud Computing">Cloud Computing</option>
+    <option value="IT Support">IT Support</option>
+    <option value="Other">Other</option>
+  </select>
+  
+  <textarea name="entry.1221718219" placeholder="Project Details" required></textarea>
+  
+  <button type="submit">Send Message</button>
+</form>
 
-        <div class="form-group">
-          <label for="client-email">Email Address *</label>
-          <input type="email" id="client-email" name="client-email" placeholder="Your email" required />
-          <small class="error-message" id="email-error"></small>
-        </div>
+<!-- Hidden iframe to prevent page reload on submit -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-        <div class="form-group">
-          <label for="project-type">Project Type *</label>
-          <select id="project-type" name="project-type" required>
-            <option value="" disabled selected>Select a project type</option>
-            <option value="IT Support">IT Support</option>
-            <option value="Cloud Deployment">Cloud Deployment</option>
-            <option value="Network Setup">Network Setup</option>
-            <option value="Automation">Automation</option>
-            <option value="Other">Other</option>
-          </select>
-          <small class="error-message" id="project-type-error"></small>
-        </div>
-
-        <div class="form-group">
-          <label for="budget">Budget (USD)</label>
-          <input type="number" id="budget" name="budget" placeholder="Your budget (optional)" min="0" />
-        </div>
-
-        <div class="form-group">
-          <label for="deadline">Deadline</label>
-          <input type="date" id="deadline" name="deadline" />
-        </div>
-
-        <div class="form-group">
-          <label for="project-details">Project Details *</label>
-          <textarea id="project-details" name="project-details" rows="5" placeholder="Describe your project" required></textarea>
-          <small class="error-message" id="details-error"></small>
-        </div>
-
-        <button type="submit" class="btn submit-btn">Send Request</button>
-        <p class="form-success" id="form-success" role="alert" aria-live="polite"></p>
-      </form>
     </div>
   </section>
 
