@@ -234,21 +234,18 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.about-image {
-    text-align: center;
-}
-
 .profile-photo {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-.profile-photo:hover {
-    transform: scale(1.05);
+@media (max-width: 700px) {
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 .about-text p {
