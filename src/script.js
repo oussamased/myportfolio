@@ -65,45 +65,6 @@ window.addEventListener('scroll', () => {
 });
 
 // Contact form handling
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Basic form validation
-    if (!name || !email || !subject || !message) {
-        showNotification('Please fill in all fields.', 'error');
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showNotification('Please enter a valid email address.', 'error');
-        return;
-    }
-    
-    // Simulate form submission (since this is frontend only)
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-    
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
-
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const data = {
-            name: form.name.value,
-            email: form.email.value,
-            subject: form.subject.value,
-            message: form.message.value
-        };
-
         fetch("https://script.google.com/macros/s/AKfycbyatcs4I8PpbglMqwKwVNZHm7TUYNQnYH2jxg3XleY56jqjel4aJOd6TgXwQwpYda3vbA/exec", {
             method: "POST",
             body: JSON.stringify(data),
